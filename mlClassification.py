@@ -77,13 +77,13 @@ plt.show()
 
 print("INICIANDO ANÁLISE EXPLORATÓRIA DE DADOS ---")
 
-print("\n[1] Resumo Estatístico do Dataset:")
+print("\nResumo Estatístico do Dataset:")
 print(df.describe())
 
-print("\n[2] Verificação de Valores Nulos/Ausentes:")
+print("\nVerificação de Valores Nulos/Ausentes:")
 print(df.isnull().sum())
 
-print("\n[3] Contagem de Amostras por Classe:")
+print("\nContagem de Amostras por Classe:")
 print(df["Classe"].value_counts().sort_index())
 
 plt.figure(figsize=(10, 5))
@@ -104,7 +104,7 @@ plt.tight_layout()
 plt.show()
 
 matriz_correlacao = df[["X1", "X2"]].corr()
-print("\n[4] Matriz de Correlação (Pearson):")
+print("\nMatriz de Correlação (Pearson):")
 print(matriz_correlacao)
 
 print("\nINICIANDO DIVISÃO DOS DADOS ---")
@@ -134,8 +134,8 @@ X_val_escalado = scaler.transform(X_val)
 X_teste_escalado = scaler.transform(X_teste)
 
 print("Dados Escalados com Sucesso!")
-print(f"Média de X1 no Treino Escalado:     {X_treino_escalado[:, 0].mean():.4f} (Deve ser 0)")
-print(f"Desvio Padrão de X1 no Treino Esc.: {X_treino_escalado[:, 0].std():.4f} (Deve ser 1)")
+print(f"Média de X1 no Treino Escalado:     {X_treino_escalado[:, 0].mean():.4f}")
+print(f"Desvio Padrão de X1 no Treino Esc.: {X_treino_escalado[:, 0].std():.4f}")
 
 print("\nINICIANDO CONSTRUÇÃO DA MLP COM REGULARIZAÇÃO L2 ---")
 
